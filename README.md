@@ -1,30 +1,80 @@
-# React + TypeScript + Vite
+# Projeto Spotify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse projeto é uma interface baseada no design do Spotify. Utilizei os elementos que estavam no proprio site.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias usadas
 
-## Expanding the ESLint configuration
+Utilizei React com Typescript, criando o projeto com o Vite e usando o Tailwind CSS, junto com alguns elementos da biblioteca DaisyUI.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Como Rodar o Projeto
 
-- Configure the top-level `parserOptions` property like this:
+Para rodar o projeto localmente, siga estas etapas:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Certifique-se de ter o Node.js instalado em seu sistema. Você pode fazer o download e instalá-lo [aqui](https://nodejs.org/).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Instale as dependências do Tailwind CSS, PostCSS e Autoprefixer executando o seguinte comando no terminal:
+
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   ```
+
+3. Inicialize o arquivo de configuração do Tailwind CSS executando o seguinte comando:
+
+   ```bash
+   npx tailwindcss init -p
+   ```
+
+4. Depois adicione essas linhas no index.css
+
+   ```bash
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+5. Instale a biblioteca DaisyUI executando o seguinte comando:
+
+   ```bash
+   npm i -D daisyui@latest
+   ```
+
+6. Instale os ícones do React executando o seguinte comando:
+
+   ```bash
+   npm install react-icons --save
+   ```
+
+7. Por fim, instale todas as dependências do projeto executando:
+
+   ```bash
+   npm install
+   ```
+
+8. Certifique que o arquvio `tailwind.config.js` esteja da seguinte forma:
+
+   ```bash
+   /** @type {import('tailwindcss').Config} */
+   export default {
+     content: [
+       "./index.html",
+       "./src/**/*.{js,ts,jsx,tsx}",
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [require("daisyui")],
+   }
+   ```
+
+9. Após a instalação, inicie o servidor de desenvolvimento executando:
+
+   ```bash
+   npm run dev
+   ```
+
+## Atualizações futuras
+
+O site já está responsivo em grande parte, porém pretendo melhorar alguns aspectos.
+
+
