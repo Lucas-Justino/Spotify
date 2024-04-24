@@ -77,4 +77,7 @@ Para rodar o projeto localmente, siga estas etapas:
 
 O site já está responsivo em grande parte, porém pretendo melhorar alguns aspectos.
 
+## Link do projeto na nuvem
+
+https://spotify-black-ten.vercel.app/
 
