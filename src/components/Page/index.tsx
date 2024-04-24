@@ -1,110 +1,65 @@
-import { FaSpotify } from "react-icons/fa";
-import { GoHomeFill } from "react-icons/go";
-import { FaSearch } from "react-icons/fa";
-import { MdArrowBackIos } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
-import { VscLibrary } from "react-icons/vsc";
-import { IoMdAdd } from "react-icons/io";
-import { GrLanguage } from "react-icons/gr";
+import Sidebar from "../Sidebar";
+import Navbar from "../Navbar";
+import Card from "../Card";
+import image1 from "../../images/lofibeats.jpg";
+import image2 from "../../images/todaystophits.jpg";
+import image3 from "../../images/chilloutlounge.jpg";
+import image4 from "../../images/allout2020s.jpg";
+import image5 from "../../images/jazzinthebackground.jpg";
+import image6 from "../../images/chillhits.jpg";
+import Links from "../Links";
+import Socials from "../Socials";
+import { FaRegCopyright } from "react-icons/fa";
+import Ad from "../Ad";
 
 const Page = () => {
     return (
         <div>
-            <div className="flex h-screen gap-2">
-                <aside className="w-120 flex flex-col gap-2">
-                    <div className="bg-zinc-900 h-1/5 flex flex-col gap-4 p-4 pl-6 rounded-lg">
-                        <div className="h-1/3 flex gap-1 font-bold items-center">
-                            <FaSpotify color="white" />
-                            Spotify
-                        </div>
-                        <div className="h-1/3 flex gap-4 font-semibold items-center">
-                            <GoHomeFill />
-                            Início
-                        </div>
-                        <div className="h-1/3 flex gap-4 font-semibold items-center">
-                            <FaSearch />
-                            Buscar
-                        </div>
-                    </div>
-                    <div className="bg-zinc-900 h-4/5 rounded-lg p-2 pt-4 flex flex-col gap-6">
-                        <div className="flex justify-between items-center pl-4">
-                            <div className="flex gap-4 font-bold justify-start items-center">
-                                <VscLibrary size={30} />
-                                Sua Biblioteca
-                            </div>
-                            <IoMdAdd size={25} />
-                        </div>
-                        <div className="bg-zinc-800 flex flex-col gap-4 rounded-lg p-4 text-white">
-                            <p className="font-bold">
-                                Crie sua primeira playlist
-                            </p>
-                            <p className="">
-                                É facil, vamos te ajudar.
-                            </p>
-                            <button className="btn-circle bg-white text-black h-10 w-28 font-bold text-sm">
-                                Criar playlist
-                            </button>
-                        </div>
-                        <div className="bg-zinc-800 flex flex-col gap-4 rounded-lg p-4 text-white">
-                            <p className="font-bold">
-                                Que tal seguir um podcast novo?
-                            </p>
-                            <p className="">
-                                Avisaremos você sobre novos episódios.
-                            </p>
-                            <button className="btn-circle bg-white text-black h-10 w-32 font-bold text-sm">
-                                Explore podcasts
-                            </button>
-                        </div>
-                        <div className="flex flex-col p-4 gap-3">
-                            <div className="flex text-xs justify-around gap-4">
-                                <p>Legal</p>
-                                <p>Segurança e Centro de privacidade</p>
-                                <p>Política de privacidade</p>
-                            </div>
-                            <div className="flex text-xs justify-start gap-4">
-                                <p>Cookies</p>
-                                <p>Sobre anúncios</p>
-                                <p>Acessibilidade</p>
-                            </div>
-                            <div className="text-sm">
-                                <p>Cookies</p>
-                            </div>
-                            <button className="btn-circle bg-zinc-900 border border-white h-10 w-40 text-white font-bold text-xs flex items-center justify-center gap-1 mt-4">
-                                <GrLanguage size={20} />
-                                Português do Brasil
-                            </button>
-                        </div>
-                    </div>
-                </aside>
+            <div className="flex flex-col md:flex-row h-screen gap-2">
+                <Sidebar />
                 <main className="flex-1">
-                    <div className="bg-zinc-900 w-full h-20 flex justify-between rounded-lg">
-                        <div className="flex justify-start items-center gap-2 p-3">
-                            <button className="btn-circle bg-black flex justify-center items-center h-7 w-7 pl-1">
-                                <MdArrowBackIos />
-                            </button>
-                            <button className="btn-circle bg-black flex justify-center items-center h-7 w-7">
-                                <MdArrowForwardIos />
-                            </button>
+                    <Navbar />
+                    <div className="bg-zinc-900 h-full rounded-b-lg md:h-full sm:h-full">
+                        <div className="p-2 pl-4 flex justify-between">
+                            <p className="text-white text-2xl font-bold">
+                                Playlists do Spotify
+                            </p>
+                            <p className="font-semibold pr-10">
+                                Mostrar tudo
+                            </p>
                         </div>
-                        <div className="flex justify-end items-center gap-8 p-10">
-                            <button className="font-bold">
-                                Inscrever-se
-                            </button>
-                            <button className="btn-circle bg-white text-black w-28 flex items-center justify-center font-bold">
-                                Entrar
-                            </button>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 ml-4">
+                            <Card imageSrc={image1} title="lofi beats" description="chill beats, lofi vibes, new tracks every week..." />
+                            <Card imageSrc={image2} title="Today's Top Hits" description="Taylor Swift is on top of the Hottest 50!" />
+                            <Card imageSrc={image3} title="Chillout Lounge" description="Just lean back and enjoy relaxed beats." />
+                            <Card imageSrc={image4} title="All Out 2020s" description="The biggest songs of the 2020s." />
+                            <Card imageSrc={image5} title="Jazz in the..." description="Soft instrumental Jazz for all your activities." />
+                            <Card imageSrc={image6} title="Chill Hits" description="Kick back to the best new and recent chill..." />
                         </div>
+                        <div className="mt-10 md:flex justify-between p-10">
+                            <div className="md:w-3/4">
+                                <Links />
+                            </div>
+                            <div className="md:w-1/4">
+                                <Socials />
+                            </div>
+                        </div>
+                        <footer className="bg-zinc-900 h-14 rounded-lg">
+                            <div className="flex m-5 ">
+                                <div className="bg-zinc-800 w-96 h-0.5"></div>
+                                <div className="bg-zinc-800 w-96 h-0.5"></div>
+                                <div className="bg-zinc-800 w-96 h-0.5"></div>
+                            </div>
+                            <div className="flex justify-start items-center gap-1 m-7 text-sm">
+                                <FaRegCopyright />
+                                2024
+                                Spotify AB
+                            </div>
+                        </footer>
                     </div>
-                    <div className="bg-orange-500 h-3/4">
-                        Tela Main
-                    </div>
-                    <footer className="bg-purple-800 h-28">
-                        FOOTER
-                    </footer>
                 </main>
             </div>
-
+            <Ad />
         </div>
     );
 }
